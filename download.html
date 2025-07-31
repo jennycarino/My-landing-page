@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downloading Adobe Premiere Pro...</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --tertiary-bg: #2a2a2a;
+            --accent-blue: #0066ff;
+            --accent-orange: #ff6600;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --text-muted: #888888;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --transition-medium: 0.3s ease;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .download-container {
+            text-align: center;
+            background: var(--secondary-bg);
+            padding: var(--spacing-lg);
+            border-radius: 12px;
+            border: 1px solid var(--tertiary-bg);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .download-icon {
+            font-size: 4rem;
+            margin-bottom: var(--spacing-md);
+            animation: pulse 2s infinite;
+        }
+
+        .drive-icon {
+            color: #4285f4;
+        }
+
+        .mediafire-icon {
+            color: var(--accent-orange);
+        }
+
+        .download-title {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .download-status {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            font-size: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: var(--tertiary-bg);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-orange));
+            width: 0%;
+            animation: progress 3s ease-out forwards;
+        }
+
+        .download-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0%;
+            }
+            30% {
+                width: 60%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        .spinner {
+            display: inline-block;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .download-container {
+                padding: var(--spacing-md);
+            }
+            
+            .download-icon {
+                font-size: 3rem;
+            }
+            
+            .download-title {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="download-container">
+        <div class="download-icon">
+            <i class="fas fa-spinner spinner" id="loading-icon"></i>
+        </div>
+        <h1 class="download-title" id="download-title">Preparing Download...</h1>
+        <p class="download-status" id="download-status">Initializing download process</p>
+        
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <div class="download-info">
+            <p>Your download will begin automatically.</p>
+            <p>This window will close once the download starts.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Download URLs for different sources
+        const downloadUrls = {
+            drive: 'https://drive.google.com/uc?export=download&id=1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
+            mediafire: 'https://download1337.mediafire.com/sample/example_file.zip'
+        };
+
+        // Initialize download process
+        function initializeDownload() {
+            const source = getUrlParameter('source');
+            const loadingIcon = document.getElementById('loading-icon');
+            const downloadTitle = document.getElementById('download-title');
+            const downloadStatus = document.getElementById('download-status');
+
+            if (!source || !downloadUrls[source]) {
+                downloadTitle.textContent = 'Invalid Download Source';
+                downloadStatus.textContent = 'Unable to process download request';
+                loadingIcon.className = 'fas fa-exclamation-triangle';
+                loadingIcon.style.color = '#ff6600';
+                return;
+            }
+
+            // Update UI based on source
+            if (source === 'drive') {
+                downloadTitle.textContent = 'Google Drive Download';
+                downloadStatus.textContent = 'Connecting to Google Drive...';
+                setTimeout(() => {
+                    loadingIcon.className = 'fab fa-google-drive drive-icon';
+                    downloadStatus.textContent = 'Initiating download from Google Drive';
+                }, 1000);
+            } else if (source === 'mediafire') {
+                downloadTitle.textContent = 'Mediafire Download';
+                downloadStatus.textContent = 'Connecting to Mediafire...';
+                setTimeout(() => {
+                    loadingIcon.className = 'fas fa-cloud-download-alt mediafire-icon';
+                    downloadStatus.textContent = 'Initiating download from Mediafire';
+                }, 1000);
+            }
+
+            // Start download after progress animation
+            setTimeout(() => {
+                startDownload(source);
+            }, 3000);
+        }
+
+        // Start the actual download
+        function startDownload(source) {
+            const downloadUrl = downloadUrls[source];
+            const downloadStatus = document.getElementById('download-status');
+            
+            downloadStatus.textContent = 'Starting download...';
+
+            // Create invisible download link
+            const downloadLink = document.createElement('a');
+            downloadLink.href = downloadUrl;
+            downloadLink.download = 'Adobe_Premiere_Pro_2025.zip';
+            downloadLink.style.display = 'none';
+            document.body.appendChild(downloadLink);
+
+            // Trigger download
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+
+            // Update status and close window
+            downloadStatus.textContent = 'Download started! Closing window...';
+            
+            // Close window after a short delay
+            setTimeout(() => {
+                // Try to close the window
+                try {
+                    window.close();
+                } catch (e) {
+                    // If window.close() fails, redirect to about:blank
+                    window.location.href = 'about:blank';
+                }
+            }, 1500);
+        }
+
+        // Handle errors
+        function handleError() {
+            const downloadTitle = document.getElementById('download-title');
+            const downloadStatus = document.getElementById('download-status');
+            const loadingIcon = document.getElementById('loading-icon');
+
+            downloadTitle.textContent = 'Download Error';
+            downloadStatus.textContent = 'Unable to start download. Please try again.';
+            loadingIcon.className = 'fas fa-exclamation-triangle';
+            loadingIcon.style.color = '#ff6600';
+
+            // Close window after error message
+            setTimeout(() => {
+                try {
+                    window.close();
+                } catch (e) {
+                    window.location.href = 'about:blank';
+                }
+            }, 3000);
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                initializeDownload();
+            } catch (error) {
+                console.error('Download initialization error:', error);
+                handleError();
+            }
+        });
+
+        // Handle page visibility change (detect if user navigates away)
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // User switched away from tab, ensure window closes
+                setTimeout(() => {
+                    try {
+                        window.close();
+                    } catch (e) {
+                        window.location.href = 'about:blank';
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>

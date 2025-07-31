@@ -1,0 +1,126 @@
+{
+  "name": "Adobe Premiere Pro",
+  "version": "2025 v26.8.1.8 WIN",
+  "size": "3.2 GB",
+  "description": "Professional video editing software with advanced features for creators, filmmakers, and content producers worldwide.",
+  "image": "data/img/Adobe_Premiere_Pro_CC_icon.svg.png",
+  "downloadUrl": "#",
+  "systemRequirements": {
+    "windows": {
+      "os": "Windows 10 (64-bit) v1909 or later",
+      "processor": "Intel 6th Gen or newer CPU or AMD equivalent",
+      "memory": "8 GB of RAM (16 GB recommended)",
+      "graphics": "2 GB of GPU VRAM",
+      "storage": "8 GB of available hard-disk space",
+      "display": "1920 x 1080 display"
+    },
+    "mac": {
+      "os": "macOS v10.15 (Catalina) or later",
+      "processor": "Intel 6th Gen or newer CPU or Apple M1",
+      "memory": "8 GB of RAM (16 GB recommended)",
+      "graphics": "2 GB of GPU VRAM",
+      "storage": "8 GB of available hard-disk space",
+      "display": "1920 x 1080 display"
+    }
+  },
+  "features": [
+    {
+      "title": "Professional Timeline Editing",
+      "description": "Advanced multi-track timeline with precision editing tools, real-time preview capabilities, and seamless workflow integration for professional video production.",
+      "image": "data/img/1753921779386.jpg",
+      "highlights": [
+        "Multi-track editing",
+        "Real-time preview",
+        "Advanced trimming tools",
+        "Nested sequences"
+      ]
+    },
+    {
+      "title": "AI-Powered Color Correction",
+      "description": "Intelligent auto-color correction powered by Adobe Sensei AI technology for professional-grade color grading and enhancement with minimal manual intervention.",
+      "image": "data/img/1753922074643.jpg",
+      "highlights": [
+        "Auto color correction",
+        "Lumetri Color panel",
+        "HDR support",
+        "Color matching"
+      ]
+    },
+    {
+      "title": "Motion Graphics Integration",
+      "description": "Seamless integration with After Effects for stunning motion graphics, visual effects, and dynamic templates that bring your videos to life.",
+      "image": "data/img/1753922325939.jpg",
+      "highlights": [
+        "After Effects integration",
+        "Essential Graphics panel",
+        "Motion graphics templates",
+        "3D text and shapes"
+      ]
+    }
+  ],
+  "changelog": [
+    {
+      "version": "2025.1",
+      "date": "2024-12-15",
+      "changes": [
+        "Enhanced AI color correction algorithms",
+        "Improved performance for 4K and 8K editing",
+        "New motion graphics templates",
+        "Bug fixes and stability improvements"
+      ]
+    },
+    {
+      "version": "2025.0",
+      "date": "2024-10-20",
+      "changes": [
+        "Major UI redesign with dark theme",
+        "New audio enhancement tools",
+        "Improved export presets",
+        "Enhanced collaboration features"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "name": "Best Video Editing Software 2024",
+      "organization": "TechRadar",
+      "year": 2024
+    },
+    {
+      "name": "Editor's Choice Award",
+      "organization": "PC Magazine",
+      "year": 2024
+    },
+    {
+      "name": "Professional Video Software of the Year",
+      "organization": "Digital Arts",
+      "year": 2023
+    }
+  ],
+  "pricing": {
+    "subscription": {
+      "monthly": "$22.99",
+      "yearly": "$239.88"
+    },
+    "bundle": {
+      "creative_cloud": "$54.99",
+      "description": "Includes all Adobe Creative Cloud apps"
+    }
+  },
+  "support": {
+    "documentation": "https://helpx.adobe.com/premiere-pro.html",
+    "community": "https://community.adobe.com/t5/premiere-pro/ct-p/ct-premiere-pro",
+    "tutorials": "https://helpx.adobe.com/premiere-pro/tutorials.html",
+    "contact": {
+      "email": "support@adobe.com",
+      "phone": "1-800-833-6687",
+      "hours": "Monday - Friday: 9 AM - 6 PM PST"
+    }
+  },
+  "metadata": {
+    "lastUpdated": "2025-01-15T10:30:00Z",
+    "version": "1.0.0",
+    "language": "en-US",
+    "region": "global"
+  }
+}
