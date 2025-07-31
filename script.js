@@ -44,7 +44,7 @@ async function initializeApp() {
 // Load software data from JSON
 async function loadSoftwareData() {
     try {
-        const response = await fetch('./data/software.json');
+        const response = await fetch('software.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
