@@ -3,7 +3,7 @@
   "version": "2025 v26.8.1.8 WIN",
   "size": "3.2 GB",
   "description": "Professional video editing software with advanced features for creators, filmmakers, and content producers worldwide.",
-  "image": "data/img/Adobe_Premiere_Pro_CC_icon.svg.png",
+  "image": "Adobe_Premiere_Pro_CC_icon.svg.png",
   "downloadUrl": "#",
   "systemRequirements": {
     "windows": {
@@ -27,7 +27,7 @@
     {
       "title": "Professional Timeline Editing",
       "description": "Advanced multi-track timeline with precision editing tools, real-time preview capabilities, and seamless workflow integration for professional video production.",
-      "image": "data/img/1753921779386.jpg",
+      "image": "1753921779386.jpg",
       "highlights": [
         "Multi-track editing",
         "Real-time preview",
@@ -38,7 +38,7 @@
     {
       "title": "AI-Powered Color Correction",
       "description": "Intelligent auto-color correction powered by Adobe Sensei AI technology for professional-grade color grading and enhancement with minimal manual intervention.",
-      "image": "data/img/1753922074643.jpg",
+      "image": "1753922074643.jpg",
       "highlights": [
         "Auto color correction",
         "Lumetri Color panel",
@@ -49,7 +49,7 @@
     {
       "title": "Motion Graphics Integration",
       "description": "Seamless integration with After Effects for stunning motion graphics, visual effects, and dynamic templates that bring your videos to life.",
-      "image": "data/img/1753922325939.jpg",
+      "image": "1753922325939.jpg",
       "highlights": [
         "After Effects integration",
         "Essential Graphics panel",
